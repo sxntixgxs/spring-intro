@@ -7,6 +7,7 @@ import com.intro.intro.models.User;
 import com.intro.intro.models.dto.UserDTO;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,5 +41,13 @@ public class UserRestController {
         return listUsers;
     }
     
+    @GetMapping("/list-array-details")
+    public List<User> listArrayDetails(){
+        User user = new User("Zion","Lenox");
+        User user2  = new User("Daddy","Bori");
+        User user3 = new User("Menor","Targaryen");
+        List<User> listUsers = Arrays.asList(user,user2,user3);
+        return listUsers;
+    }
 
 }
