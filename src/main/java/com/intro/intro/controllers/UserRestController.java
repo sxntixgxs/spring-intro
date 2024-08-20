@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.intro.intro.models.User;
+import com.intro.intro.models.dto.UserDTO;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,12 +18,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class UserRestController {
 
     @GetMapping("/details")
-    public Map<String,Object> details() {
-        User user = new User("Menor","Acuaman");
-        Map<String,Object> body = new HashMap<>();
-        body.put("title", "first try with SpringBoot");
-        body.put("user",user);
-        return body;
+    public UserDTO details() {
+        UserDTO userDto = new UserDTO();
+        User user = new User("Till","Collapse");
+        userDto.setTitle("Second try with SpringBoot");
+        userDto.setUser(user);
+        return userDto;
     }
     
 
