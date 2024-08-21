@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Document</title>
+</head>
+<body>
+    <h1 th:text="${title}"></h1>
+    <div th:if="${users.isEmpty()}" th:text="${'The list is empty'}"></div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--For each user in users ...-->
+            <tr th:each="user : ${users}">
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.surname}"></td>
+                <td th:text="${user.email}"></td>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+</html>

@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -49,5 +50,6 @@ public class UserRestController {
         List<User> listUsers = Arrays.asList(user,user2,user3);
         return listUsers;
     }
+
 
 }
