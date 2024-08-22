@@ -30,4 +30,6 @@ public class UserController {
         model.addAttribute("users",userList);
         return "list";//Here is the view name
     }
+
+
 }

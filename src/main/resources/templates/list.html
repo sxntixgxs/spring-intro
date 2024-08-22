@@ -21,7 +21,8 @@
             <tr th:each="user : ${users}">
                 <td th:text="${user.name}"></td>
                 <td th:text="${user.surname}"></td>
-                <td th:text="${user.email}"></td>
+                <td th:if="${user.email}" th:text="${user.email}"></td>
+                <td th:text="${not (user.email !=null )}" th:text="${'Email doesn't found}"></td>
             </tr>
 
         </tbody>

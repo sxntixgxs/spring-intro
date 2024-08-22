@@ -50,6 +50,14 @@ public class UserRestController {
         List<User> listUsers = Arrays.asList(user,user2,user3);
         return listUsers;
     }
-
+    @GetMapping("/users")
+    public List<User> usersModel(){
+        List<User> users = Arrays.asList(
+            new User("Sorry","I dont wanna"),
+            new User("Shorty","I wanna do this"),
+            new User("And this"," another")
+        );
+        return users;
+    }
 
 }
