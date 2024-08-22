@@ -74,7 +74,7 @@ public class UserRestController {
         return "search";
     }   
     @GetMapping("/user")
-    public String user(@RequestParam(name="id",required = false) String id, Model model){
+    public String user(@RequestParam(name="id",required = false ) String id, Model model){
         model.addAttribute("id",id);
         return "userProfile";
     }
