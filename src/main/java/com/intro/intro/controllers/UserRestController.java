@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -59,5 +60,22 @@ public class UserRestController {
         );
         return users;
     }
-
+    @GetMapping("/greeting")
+        public String greeting(@RequestParam(name="name",defaultValue = "world")
+        String name, Model model){
+            model.addAttribute("title","This is the greeting view");
+            model.addAttribute("name",name);
+            return "greeting";
+        }
+    @GetMapping("/search")
+    public String search(@RequestParam("query") String query, Model model){
+        model.addAttribute("title","This is the @RequestParam example");
+        model.addAttribute("query",query);
+        return "search";
+    }   
+    @GetMapping("/user")
+    public String user(@RequestParam(name="id",required = false) String id, Model model){
+        model.addAttribute("id",id);
+        return "userProfile";
+    }
 }
